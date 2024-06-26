@@ -19,6 +19,7 @@ jobs:
         npm install
         npm run build
     - name: Test
+      working-directory: ./DotnetTemplate.Web
       run: npm t
     - name: Lint
       working-directory: ./DotnetTemplate.Web
