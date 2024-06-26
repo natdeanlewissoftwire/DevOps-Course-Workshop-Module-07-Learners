@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   build:
-    name: Build and test
+    name: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -13,9 +13,8 @@ jobs:
         dotnet-version: '6.0.x'
     - name: Build
       run: dotnet build
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 18
-    - run: npm install
-    - run: npm run build
+      working-directory: ./DotnetTemplate.Web
+      run: npm install
+      run: npm run build
+
+
